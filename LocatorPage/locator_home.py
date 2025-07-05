@@ -12,27 +12,15 @@ class MenuLocators:
     HEADPHONES_LINK = (By.LINK_TEXT, "Headphones")  # or correct locator under Mega Menu
 
 class ProductPageLocators:
-    FIRST_PRODUCT = (
-        By.XPATH,
-        "(//div[contains(@class, 'product-thumb')])[1]"
-    )
-    FIRST_PRODUCT_ADD_TO_CART = (
-        By.XPATH,
-        "(//div[contains(@class, 'product-thumb')])[1]//button[contains(@aria-label, 'Add to Cart')]"
-    )
-    SORT_DROPDOWN = (By.ID, "input-sort-212403")
+        FIRST_PRODUCT = (By.XPATH, "(//div[contains(@class, 'product-thumb')])[1]")
+        FIRST_PRODUCT_ADD_TO_CART = (By.XPATH,"(//div[contains(@class,'product-thumb')])[1]//button[contains(@class, 'btn-cart')]")
 
-# class ProductPageLocators:
-#     FIRST_PRODUCT = (By.XPATH, "(//div[@class='product-thumb'])[1]")
-#     FIRST_PRODUCT_ADD_TO_CART = (By.XPATH, "(//div[@class='product-thumb'])[1]//button[@aria-label='Add to Cart']")
-#     SORT_DROPDOWN = (By.ID, "input-sort-212403")
-#     PRODUCT_THUMBNAIL = (By.XPATH, "(//div[@class=\'product-thumb\'])[1]")
-#     ADD_TO_CART_BUTTON = (By.XPATH, "(//div[@class=\'product-thumb\'])[1]//button[@aria-label=\'Add to Cart\']")
 
 class CartPopupPageLocators:
     VIEW_CART_BUTTON = (By.XPATH, "//a[normalize-space()=\'View Cart\']")
     CHECKOUT_BUTTON = (By.XPATH, "//a[normalize-space()=\'Checkout\']")
-    PROCEED_TO_CHECKOUT_BUTTON = (By.CSS_SELECTOR, ".btn-primary[href*='checkout']")
+    # PROCEED_TO_CHECKOUT_BUTTON = (By.CSS_SELECTOR, ".btn-primary[href*='checkout']")
+    PROCEED_TO_CHECKOUT_BUTTON = (By.CSS_SELECTOR, "a.btn.btn-secondary.btn-block")
 
 class CheckoutPageLocators:
     # PRODUCTS ARE OUT OF STOCK
@@ -54,7 +42,4 @@ class CheckoutPageLocators:
     class CheckoutLocators:
         # Add this to existing class
         NEWSLETTER_CHECKBOX = (By.NAME, "newsletter")
- # NEWSLETTER CHECK BOX
- # NEWSLETTER_CHECKBOX = (By.XPATH, "//input[@name='newsletter' and @type='checkbox']")
-
 
